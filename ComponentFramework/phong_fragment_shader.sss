@@ -1,0 +1,35 @@
+#version 410
+
+#define MAX_LIGHTS 3
+
+in  vec3 vertNormal;
+in  vec3 lightDir[MAX_LIGHTS];
+in  vec3 vertDir;
+out vec4 fragColor; /// color of 1 pixel
+
+void main() {
+	vec4 ks[MAX_LIGHTS];
+	vec4 kd[MAX_LIGHTS];
+	vec4 ka[MAX_LIGHTS];
+	
+	
+	ks[0] = vec4(1.0, 1.0, 1.0, 0.0);
+	kd[0] = vec4(1.0, 0.0, 0.0, 0.0); 
+	ka[0] = 0.1 * kd[0];
+
+	ks[1] = vec4(1.0, 1.0, 1.0, 0.0);
+	kd[1] = vec4(0.3, 0.9, 0.5, 0.0); 
+	ka[1] = 0.1 * kd[1];
+
+	for (int i = 1; i < MAX_LIGHTS; ++i){
+		float diff = max(dot(vertNormal, lightDir[i]), 0.0); /// max represent the biggest number of two arguments
+		vec3 reflection = normalize(reflect(lightDir[i], vertNormal));
+	}
+	float spec = max(dot(vertDir, reflection), 0.0);
+	if(diff > 0.0){
+		spec = pow(spec,14.0); /// raise the power of spectacular
+	}
+
+	fragColor = ka[i] + (diff * kd[i]) + (spec * ks[i]);
+} 
+

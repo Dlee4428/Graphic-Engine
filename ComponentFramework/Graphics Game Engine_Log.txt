@@ -1,0 +1,3 @@
+[INFO]: Starting the GameSceneManager in file: D:\Humber Game Programming\Semester 5\GAME_303_Scott\ComponentFramework1.0.4\ComponentFramework\Main.cpp on line: 14
+[INFO]: OpenGL version: 4.6.0 NVIDIA 441.20 in file: D:\Humber Game Programming\Semester 5\GAME_303_Scott\ComponentFramework1.0.4\ComponentFramework\Window.cpp on line: 41
+[INFO]: Deleting the GameSceneManager in file: D:\Humber Game Programming\Semester 5\GAME_303_Scott\ComponentFramework1.0.4\ComponentFramework\GameSceneManager.cpp on line: 29
